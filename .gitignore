@@ -3,3 +3,7 @@ node_modules
 .amplify
 amplify_outputs*
 amplifyconfiguration*
+
+# macOS system files
+.DS_Store
+**/.DS_Store
