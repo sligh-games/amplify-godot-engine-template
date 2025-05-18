@@ -5,41 +5,24 @@
 [![Feature Requests](https://img.shields.io/github/issues/sligh-games/amplify-godot-engine-template/feature-request?color=ff9001&label=feature%20requests)](https://github.com/sligh-games/amplify-godot-engine-template/issues?q=is%3Aissue+label%3Afeature-request+is%3Aopen)
 [![Closed Issues](https://img.shields.io/github/issues-closed/sligh-games/amplify-godot-engine-template?color=%2325CC00&label=issues%20closed)](https://github.com/sligh-games/amplify-godot-engine-template/issues?q=is%3Aissue+is%3Aclosed+)
 
-## Introduction
+A production-ready AWS Amplify project template for Godot Engine game development. This template streamlines the process of taking your Godot game from development to production with minimal configuration, providing a complete cloud infrastructure foundation optimized for game deployment.
 
-This project contains an AWS Amplify project template to create, build, export and deploy Godot Engine projects on cloud infrastructure. It streamlines the process of taking your Godot game from development to production with minimal configuration.
+### Key Features
 
-### What is AWS Amplify?
+- **Full-Stack Solution**: Pre-configured backend and frontend integration for Godot games
+- **Authentication System**: Ready-to-use player authentication with customizable login methods
+- **Data Modeling**: Flexible schema definitions with relationship support for game data
+- **Cloud Deployment**: Automated build and hosting pipeline for web and mobile games
+- **Optimized Delivery**: Custom HTTP headers for efficient game asset delivery
+- **Developer Friendly**: TypeScript-first approach with Amplify Gen 2
 
-AWS Amplify is a set of tools and services that enables developers to build full-stack applications with features like authentication, storage, and serverless functions. This template leverages Amplify to provide:
+## Getting Started
 
-- Automated CI/CD pipeline for your Godot projects
-- Simplified cloud deployment with minimal AWS knowledge required
-- Scalable hosting for web-based Godot games
-- Easy integration with other AWS services when needed
+Jump right into your Godot CI/CD pipeline with our comprehensive resources:
+- **Quick Setup**: Follow our [quickstart guides](https://docs.sligh.games/#!/en/amplify-godot/get-started) for step-by-step implementation
+- **Advanced Usage**: Explore [interactive labs](https://docs.sligh.games/#!/en/amplify-godot) for deeper integration scenarios
 
-### What is Godot Engine?
-
-[Godot Engine](https://godotengine.org/) is a free and open-source game engine that provides a comprehensive set of tools for game development across multiple platforms. This template is designed to work with Godot 4.x projects.
-
-### Sample Game
-
-This template includes a sample game named [Squash The Creeps](https://github.com/godotengine/godot-demo-projects/tree/master/3d/squash_the_creeps) from the [Godot Demo Projects](https://github.com/godotengine/godot-demo-projects). You can learn how to build this game from scratch in the [Godot Documentation](https://docs.godotengine.org) in the [Your first 3D game](https://docs.godotengine.org/en/stable/getting_started/first_3d_game/index.html) section.
-
-## Quickstart
-
-If you need step by step tutorials you can use our [quicktstarts](https://github.com/sligh-games/amplify-godot-engine/wiki/Create-a-New-Game) or explore [labs](https://github.com/sligh-games/amplify-godot-engine/wiki) on the wiki.
-
-### Prerequisites
-
-Before you begin, make sure you have:
-
-- [Node.js](https://nodejs.org/) (v16 or later)
-- [AWS CLI](https://aws.amazon.com/cli/) installed and configured
-- [Godot Engine](https://godotengine.org/download) (v4.x recommended)
-- An AWS account with appropriate permissions
-
-### Project Structure
+## Project structure
 
 ```
 amplify-godot-engine-template/
@@ -56,80 +39,58 @@ amplify-godot-engine-template/
 └── package.json           # Project dependencies
 ```
 
-### Getting Started
+### AWS Amplify template
 
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/sligh-games/amplify-godot-engine-template.git
-   cd amplify-godot-engine-template
-   ```
+The AWS Amplify portion of this template provides a robust backend infrastructure for your Godot game. This template is built on AWS Amplify Gen 2, which offers a TypeScript-first development experience with improved type safety and developer ergonomics.
 
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
+For web application development, AWS Amplify also provides templates for popular frameworks:
+- [React with Vite template](https://docs.amplify.aws/gen2/start/quickstart/vite/)
+- [Next.js template](https://docs.amplify.aws/gen2/start/quickstart/nextjs/)
 
-3. Initialize Amplify:
-   ```bash
-   npx amplify init
-   ```
+Learn more about AWS Amplify:
+- [AWS Amplify Website](https://aws.amazon.com/amplify/)
+- [Amplify Documentation](https://docs.amplify.aws/)
+- [Amplify Gen 2 Documentation](https://docs.amplify.aws/gen2/)
 
-4. Deploy the backend:
-   ```bash
-   npx amplify push
-   ```
 
-5. Open the Godot project:
-   ```bash
-   godot game/project.godot
-   ```
+### Godot Engine game
 
-## How It Works
+This template includes a sample game named [Squash The Creeps](https://github.com/godotengine/godot-demo-projects/tree/master/3d/squash_the_creeps) from the [Godot Demo Projects](https://github.com/godotengine/godot-demo-projects). You can learn how to build this game from scratch in the [Godot Documentation](https://docs.godotengine.org) in the [Your first 3D game](https://docs.godotengine.org/en/stable/getting_started/first_3d_game/index.html) section.
 
-This template automates several key aspects of game development and deployment:
+### HTTP custom headers
 
-### Build and Deployment Pipeline
+Custom HTTP headers are configured in the `customHttp.yml` file to optimize the delivery of your Godot game. These headers ensure:
 
-The `amplify.yml` file defines a CI/CD pipeline that:
-1. Sets up the AWS Amplify backend resources
-2. Builds your Godot game for web deployment
-3. Deploys the game to AWS hosting infrastructure
+- Proper MIME types for Godot-specific file formats
+- Efficient caching strategies for game assets
+- Security headers to protect your application
+- CORS configuration for API communication
+- Compression settings for faster loading times
 
-### Authentication and Backend Services
+You can customize these headers based on your specific game requirements and deployment environment.
 
-The template includes configuration for:
-- User authentication (optional)
-- Data storage and API endpoints (optional)
-- Serverless functions (optional)
 
-You can enable these features by uncommenting and configuring the relevant sections in the Amplify backend files.
-
-### Custom HTTP Headers
-
-The `customHttp.yml` file configures security headers for your deployed game, including:
-- Cross-Origin-Opener-Policy
-- Cross-Origin-Embedder-Policy
-
-These headers are essential for certain web features like SharedArrayBuffer that modern web games might require.
-
-## Wiki
-
-The [wiki](https://github.com/sligh-games/wiki) contains everything you want to know about getting started with Sligh Games Amplify with the Godot Engine.
 
 ## Discussions
 
-If you have a question or you want to discuss with the Sligh Games community go to the main project [discussions](https://github.com/sligh-games/amplify-godot-engine/discussions) channels.
+Join our community to get help, share ideas, and collaborate:
 
-[![join amplify discord](https://img.shields.io/discord/308323056592486420?logo=discord&label=AWS%20Amplify)](https://discord.gg/jWVbPfC)
+[![join sligh games discord](https://img.shields.io/discord/1371568283307868190?logo=discord&label=Sligh%20Games)](https://discord.gg/qN2q77zNDa)
+[![join aws amplify discord](https://img.shields.io/discord/308323056592486420?logo=discord&label=AWS%20Amplify)](https://discord.gg/amplify)
 [![join godot engine discord](https://img.shields.io/discord/1235157165589794909?logo=discord&label=Godot%20Engine)](https://discord.gg/godotengine)
+
+For technical questions and feature discussions, visit our [GitHub Discussions](https://github.com/orgs/sligh-games/discussions).
+## Security
+
+If you discover a potential security issue, please DO NOT create a public GitHub issue. Instead, send an email directly to [security@sligh.games](mailto:security@sligh.games). This helps us address security vulnerabilities promptly and responsibly.
 
 ## Issues
 
 If you have any issue with a custom build image [report a bug](https://github.com/sligh-games/amplify-godot-engine-template/issues/new?assignees=&labels=&projects=&template=bug_report.md&title=) and if you need a new image or something else [create a feature request](https://github.com/sligh-games/amplify-godot-engine-template/issues/new?assignees=&labels=&projects=&template=feature_request.md&title=).
 
-## Security
+## Contributing
 
-See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more information.
+See [CONTRIBUTING](CONTRIBUTING.md) for more information.
 
 ## License
 
